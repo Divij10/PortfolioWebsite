@@ -82,3 +82,4 @@ Divij Singh Thakur
 - Email: thakurdivijsingh@gmail.com
 - LinkedIn: [linkedin.com/in/divij-singh-thakur-75845b1b2](https://linkedin.com/in/divij-singh-thakur-75845b1b2)
 - GitHub: [github.com/Divij10](https://github.com/Divij10) # Additional details will be added soon
+# Contact me at dthakur9@asu.edu
