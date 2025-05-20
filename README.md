@@ -40,9 +40,9 @@ To customize this portfolio for your own use:
 
 ```css
 :root {
-    --primary-color: #4361ee;
-    --secondary-color: #3a0ca3;
-    --accent-color: #4cc9f0;
+    --primary-color: #00b4d8;
+    --secondary-color: #0096c7;
+    --accent-color: #48cae4;
     /* other variables */
 }
 ```

@@ -162,6 +162,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             }
             
+            .dark-mode .dark-mode-toggle {
+                background-color: var(--dark-primary);
+                box-shadow: 0 4px 10px rgba(0, 180, 216, 0.3);
+            }
+            
+            .dark-mode .dark-mode-toggle:hover {
+                box-shadow: 0 8px 15px rgba(0, 180, 216, 0.4);
+            }
+            
             .dark-mode-toggle i {
                 font-size: 1.5rem;
             }
@@ -173,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Animation on scroll functionality
     function animateOnScroll() {
-        const elements = document.querySelectorAll('.project-card, .timeline-item, .skill-category, .detail');
+        const elements = document.querySelectorAll('.project-card, .skill-category, .detail');
         
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -183,19 +192,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!element.classList.contains('animated')) {
                     element.classList.add('animated');
                     
-                    // Add different animation classes based on element type
-                    if (element.classList.contains('timeline-item')) {
-                        if (element.offsetLeft === 0) {
-                            element.classList.add('slide-in-left');
-                        } else {
-                            element.classList.add('slide-in-right');
-                        }
-                    } else if (element.classList.contains('skill-category') || element.classList.contains('detail')) {
+                    // Apply animations to non-timeline elements only
+                    if (element.classList.contains('skill-category') || element.classList.contains('detail')) {
                         element.classList.add('fade-in');
-                    } else {
+                    } else if (!element.classList.contains('timeline-item')) {
                         element.classList.add('slide-up');
                     }
                 }
+            }
+        });
+        
+        // Make timeline items visible without animation
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        timelineItems.forEach(item => {
+            const position = item.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (position < screenPosition) {
+                item.style.opacity = 1;
             }
         });
     }
@@ -206,7 +220,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact form handling
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Don't prevent the default form submission anymore
+            // e.preventDefault();
             
             // Get form data
             const name = document.getElementById('name').value;
@@ -214,17 +229,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            // Simple form validation
+            // Simple form validation (still useful for immediate feedback)
             if (!name || !email || !subject || !message) {
+                e.preventDefault(); // Prevent submission only if validation fails
                 showFormMessage('Please fill in all fields.', 'error');
                 return;
             }
             
-            // Simulate form submission (in a real app, you would send this to a server)
+            // Form will be submitted to Formspree, which will email you at dthakur9@asu.edu
+            // This message will be shown briefly before the form submits
             showFormMessage('Thank you for your message, ' + name + '! I will get back to you soon.', 'success');
             
-            // Reset form fields
-            contactForm.reset();
+            // Allow the form to naturally submit after a short delay to show the thank you message
+            // e.preventDefault();
+            // setTimeout(() => {
+            //     contactForm.submit();
+            // }, 2000);
         });
     }
 
@@ -362,7 +382,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.size = Math.random() * 5 + 1;
                 this.speedX = Math.random() * 1 - 0.5;
                 this.speedY = Math.random() * 1 - 0.5;
-                this.color = '#4361ee';
+                this.color = '#00b4d8';
             }
             
             update() {
@@ -407,7 +427,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     if (distance < 100) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(67, 97, 238, ${0.3 - (distance/100) * 0.3})`;
+                        ctx.strokeStyle = `rgba(0, 180, 216, ${0.3 - (distance/100) * 0.3})`;
                         ctx.lineWidth = 1;
                         ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
                         ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
@@ -499,6 +519,15 @@ document.addEventListener('DOMContentLoaded', function() {
             .scroll-top-btn:hover {
                 transform: translateY(-5px);
                 box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            }
+            
+            .dark-mode .scroll-top-btn {
+                background-color: var(--dark-secondary);
+                box-shadow: 0 4px 10px rgba(0, 150, 199, 0.3);
+            }
+            
+            .dark-mode .scroll-top-btn:hover {
+                box-shadow: 0 8px 15px rgba(0, 150, 199, 0.4);
             }
             
             .scroll-top-btn i {
