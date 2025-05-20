@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divij Singh Thakur | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">DST</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Divij Singh Thakur</h1>
+                    <h2>Computer Science Student & Developer</h2>
+                    <p>Building innovative solutions with modern technology.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn primary-btn">View Projects</a>
+                        <a href="#contact" class="btn secondary-btn">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <!-- You can add your profile photo here -->
+                        <div class="placeholder-avatar">DST</div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-down">
+                <a href="#about">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a Computer Science student at Arizona State University with a passion for developing innovative applications and leveraging cutting-edge technologies. Currently serving as a Program Coordinator Assistant at AZNext's Workforce Training Accelerator Program, I enjoy helping others succeed while continuously expanding my own technical skills.</p>
+                    <p>My experience spans from creating AI-powered applications to developing full-stack solutions. I'm particularly interested in machine learning, cloud computing, and creating technology that solves real-world problems.</p>
+                    <div class="about-details">
+                        <div class="detail">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h3>Education</h3>
+                                <p>B.S. in Computer Science, Arizona State University</p>
+                                <p>Expected Graduation: May 2026</p>
+                                <p>Dean's List, NAU Scholar, Outstanding Leadership Award</p>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-user-tie"></i>
+                            <div>
+                                <h3>Leadership</h3>
+                                <p>President, Connecting International Communities</p>
+                                <p>Leading a student organization of 750+ members</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="section-title">
+                <h2>Work Experience</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Program Coordinator Assistant</h3>
+                        <h4>AZNext: Workforce Training Accelerator Program</h4>
+                        <p class="timeline-date">March 2023 - Present | Tempe, Arizona</p>
+                        <ul>
+                            <li>Delivered instructional support for CIS 194 by facilitating review sessions to help students prepare for the AWS Certified Cloud Practitioner exam.</li>
+                            <li>Collaborated with faculty to improve student engagement and track learning outcomes; leveraged Salesforce CRM to assist the research team in analyzing participant success metrics and program feedback.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Technology Support Assistant</h3>
+                        <h4>School of International Letters & Cultures</h4>
+                        <p class="timeline-date">January 2024 - March 2025 | Tempe, Arizona</p>
+                        <ul>
+                            <li>Provided technical and logistical support to over 3,000 students and faculty by coordinating space scheduling, delivering services, and maintaining class infrastructure.</li>
+                            <li>Designed and implemented the SILC Cataloging Bot, reducing cataloging time by 50% and minimizing errors in Library resource processing.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Intern</h3>
+                        <h4>Semi-Conductor Laboratory</h4>
+                        <p class="timeline-date">June 2023 - July 2023 | Punjab, India</p>
+                        <ul>
+                            <li>Conducted statistical analysis on datasets with over 100,000 entries using JMP software, identifying trends and anomalies to support yield improvement efforts in semiconductor fabrication.</li>
+                            <li>Collaborated on a Java-based automation tool that streamlined data sorting for semiconductor testing logs, reducing processing time by 20% and improving data pipeline efficiency.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="section-title">
+                <h2>Projects</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Bloom – AR Emotion Recognition and AI Wellness Companion</h3>
+                        <p class="project-tech">JavaScript, Node.js, OpenAI API, Socket.IO, MediaPipe</p>
+                        <p class="project-date">April 2025 | Tempe, Arizona</p>
+                        <ul>
+                            <li>Developed an interactive web application that detects real-time user emotions using facial landmark tracking, enabling dynamic AR visualizations that reflect emotional states.</li>
+                            <li>Engineered a contextual AI journaling and chatbot system using OpenAI's API, integrated with a gamified wellness tracker featuring streak-based digital garden growth to deliver personalized mental health support.</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>EmberWatch – AI-Powered Wildfire Detection</h3>
+                        <p class="project-tech">Python, Flask, HTML, CSS, JavaScript, PyTorch, TensorFlow</p>
+                        <p class="project-date">February 2025 | Tempe, Arizona</p>
+                        <ul>
+                            <li>Developed a CNN-based image classifier using PyTorch and TensorFlow, achieving high-accuracy wildfire detection across real-world datasets.</li>
+                            <li>Deployed a Flask-based web application enabling real-time image uploads and automatic fire/no-fire classification.</li>
+                            <li>Evaluated the feasibility of integrating satellite and drone imagery, outlining a pipeline for large-scale deployment and real-time alerts.</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Sun Devil Book Exchange – JavaFX-Based Book Marketplace</h3>
+                        <p class="project-tech">JavaFX, Java, FILE I/O</p>
+                        <p class="project-date">August 2024 – December 2024 | Tempe, Arizona</p>
+                        <ul>
+                            <li>Designed and built a full-stack JavaFX application that allowed students to list, filter, and purchase textbooks via intuitive UI components.</li>
+                            <li>Implemented auto-pricing logic using file I/O to dynamically suggest competitive prices based on prior listing trends and book condition.</li>
+                            <li>Added buyer and seller account features, increasing engagement, and successfully demoed to a class of 50+ students with positive feedback.</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>TextWise – AI-Powered SMS Learning Platform</h3>
+                        <p class="project-tech">Python, Flask, HTML, CSS, JavaScript</p>
+                        <p class="project-date">October 2024 | Tempe, Arizona</p>
+                        <ul>
+                            <li>Engineered an SMS learning assistant, enabling personalized content delivery via text for low-connectivity users.</li>
+                            <li>Built and optimized the backend using Python and Flask, reducing API response time by 30% while integrating Twilio for SMS delivery and OpenAI for personalized content.</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Prodbot – OpenAI Hackathon Project</h3>
+                        <p class="project-tech">Natural Language Processing, Prompt Engineering</p>
+                        <p class="project-date">September 2024 | Tempe, Arizona</p>
+                        <ul>
+                            <li>Built an AI-powered bot that parsed 100+ ICS files to automate class schedule management for Canvas users, saving ~2 hours/week per user.</li>
+                            <li>Implemented NLP-driven prompts and reminders to enhance productivity and reduce cognitive load during peak academic periods.</li>
+                            <li>Recognized in the top 10% of OpenAI Hackathon submissions for technical innovation, UX design, and real-world applicability.</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="section-title">
+                <h2>Technical Skills</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Languages & Frameworks</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>C/C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>JavaFX</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-brain"></i>
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-fire"></i>
+                            <span>PyTorch</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Web Technologies</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Flask</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Operating Systems</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-windows"></i>
+                            <span>Windows</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-apple"></i>
+                            <span>MacOS</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-linux"></i>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Design and Modeling Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>JMP Pro</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-file-excel"></i>
+                            <span>Microsoft Office Suite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Feel free to reach out to me for collaborations, opportunities, or just to say hello!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>(623)273-7395</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>thakurdivijsingh@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tempe, Arizona</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/divij-singh-thakur-75845b1b2" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Divij10" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">DST</div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://linkedin.com/in/divij-singh-thakur-75845b1b2" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Divij10" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Divij Singh Thakur. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
