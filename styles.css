@@ -167,7 +167,7 @@ section {
 /* Fix for Cursor Position on Mobile */
 @media screen and (max-width: 768px) {
     .cursor {
-        height: 40px;
+        height: 35px;
         top: 5px;
         margin-left: 5px;
         width: 3px;
@@ -176,10 +176,10 @@ section {
 
 @media screen and (max-width: 480px) {
     .cursor {
-        height: 30px;
+        height: 25px;
         top: 3px;
         margin-left: 4px;
-        width: 3px;
+        width: 2px;
     }
 }
 
@@ -1657,16 +1657,20 @@ footer {
 /* Cursor styling - slower blinking */
 .cursor {
     display: inline-block;
-    width: 4px;
-    height: 60px;
+    width: 3px;
+    height: 50px;
     background-color: var(--accent-color);
-    margin-left: 8px;
+    margin-left: 6px;
     position: relative;
-    top: 8px;
-    animation: blink 1.2s infinite; /* Slowed down from 0.7s to 1.2s */
+    top: 10px;
+    animation: blink 1.2s ease-in-out infinite;
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+    0%, 100% { 
+        opacity: 1; 
+    }
+    50% { 
+        opacity: 0; 
+    }
 }
