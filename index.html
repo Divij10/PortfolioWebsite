@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
 </head>
 <body>
     <header>
@@ -22,6 +24,7 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#resume">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="burger">
@@ -156,15 +159,20 @@
                 <h2>Top Projects</h2>
                 <div class="underline"></div>
             </div>
+            
             <div class="projects-grid">
+                <!-- Project 1 -->
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/bloom.png" alt="Bloom AI Project">
+                    </div>
                     <div class="project-content">
-                        <h3>Bloom – AR Emotion Recognition and AI Wellness Companion</h3>
+                        <h3>Bloom – AR Emotion Recognition</h3>
                         <p class="project-tech">JavaScript, Node.js, OpenAI API, Socket.IO, MediaPipe</p>
                         <p class="project-date">April 2025 | Tempe, Arizona</p>
                         <ul>
                             <li>Developed an interactive web application that detects real-time user emotions using facial landmark tracking, enabling dynamic AR visualizations that reflect emotional states.</li>
-                            <li>Engineered a contextual AI journaling and chatbot system using OpenAI's API, integrated with a gamified wellness tracker featuring streak-based digital garden growth to deliver personalized mental health support.</li>
+                            <li>Engineered a contextual AI journaling and chatbot system using OpenAI's API, integrated with a gamified wellness tracker featuring streak-based digital garden growth to deliver personalized mental health support and encourage daily emotional check-ins.</li>
                         </ul>
                         <div class="project-links">
                             <a href="https://github.com/Divij10/BloomAI" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
@@ -172,7 +180,12 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Project 2 -->
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/emberwatch.png" alt="EmberWatch Project">
+                    </div>
                     <div class="project-content">
                         <h3>EmberWatch – AI-Powered Wildfire Detection</h3>
                         <p class="project-tech">Python, Flask, HTML, CSS, JavaScript, PyTorch, TensorFlow</p>
@@ -187,9 +200,14 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Project 3 -->
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/sundevilbookexchange.png" alt="Sun Devil Book Exchange Project">
+                    </div>
                     <div class="project-content">
-                        <h3>Sun Devil Book Exchange – JavaFX-Based Book Marketplace</h3>
+                        <h3>Sun Devil Book Exchange</h3>
                         <p class="project-tech">JavaFX, Java, FILE I/O</p>
                         <p class="project-date">August 2024 – December 2024 | Tempe, Arizona</p>
                         <ul>
@@ -203,7 +221,12 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Project 4 -->
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/Textwise.png" alt="TextWise Project">
+                    </div>
                     <div class="project-content">
                         <h3>TextWise – AI-Powered SMS Learning Platform</h3>
                         <p class="project-tech">Python, Flask, HTML, CSS, JavaScript</p>
@@ -218,7 +241,12 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Project 5 -->
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/prodbot.png" alt="Prodbot Project">
+                    </div>
                     <div class="project-content">
                         <h3>Prodbot – OpenAI Hackathon Project</h3>
                         <p class="project-tech">Natural Language Processing, Prompt Engineering</p>
@@ -338,6 +366,34 @@
             </div>
         </section>
 
+        <!-- Resume Section -->
+        <section id="resume" class="resume">
+            <div class="section-title">
+                <h2>Resume</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="resume-content" data-aos="fade-up">
+                <div class="resume-text">
+                    <p>Here you can download my full resume to learn more about my experience, education, and skills.</p>
+                    <div class="resume-actions">
+                        <a href="assets/DivijSinghThakurCS-Resume2025.pdf" download class="btn primary-btn download-btn">
+                            <i class="fas fa-download"></i> Download Resume (PDF)
+                        </a>
+                        <a href="assets/DivijSinghThakurCS-Resume2025.pdf" target="_blank" class="btn secondary-btn">
+                            <i class="fas fa-eye"></i> View Resume
+                        </a>
+                    </div>
+                    <div class="resume-preview" data-aos="zoom-in" data-aos-delay="300">
+                        <iframe src="assets/DivijSinghThakurCS-Resume2025.pdf#page=1" class="resume-preview-img" frameborder="0"></iframe>
+                        <div class="resume-preview-overlay">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Click to download or view</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="contact">
             <div class="section-title">
@@ -398,6 +454,7 @@
                 <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
+                <a href="#resume">Resume</a>
                 <a href="#contact">Contact</a>
             </div>
             <div class="footer-social">
@@ -414,6 +471,7 @@
         <i class="fas fa-chevron-up"></i>
     </div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

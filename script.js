@@ -298,189 +298,68 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
 
-    // Add particle background effect to hero section
-    function addParticleBackground() {
-        const heroSection = document.querySelector('.hero');
-        
-        // Create canvas element
-        const canvas = document.createElement('canvas');
-        canvas.id = 'particle-canvas';
-        canvas.className = 'particle-canvas';
-        
-        // Insert canvas as first child of hero section
-        heroSection.insertBefore(canvas, heroSection.firstChild);
-        
-        // Add canvas styles
-        const style = document.createElement('style');
-        style.textContent = `
-            .particle-canvas {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                opacity: 0.6;
+    // Resume section interactions
+    const resumePreview = document.querySelector('.resume-preview');
+    if (resumePreview) {
+        // Make the resume preview clickable
+        resumePreview.addEventListener('click', () => {
+            const viewResumeLink = document.querySelector('.resume-actions .secondary-btn');
+            if (viewResumeLink) {
+                viewResumeLink.click(); // Open the resume in a new tab
             }
-        `;
-        document.head.appendChild(style);
-        
-        // Set up canvas
-        const ctx = canvas.getContext('2d');
-        canvas.width = heroSection.offsetWidth;
-        canvas.height = heroSection.offsetHeight;
-        
-        // Particle properties
-        const particlesArray = [];
-        // Reduce particles for mobile devices
-        const numberOfParticles = isMobile ? 40 : 80;
-        
-        // Create particle class
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 5 + 1;
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 - 0.5;
-                this.color = '#00b4d8';
-            }
-            
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                
-                if (this.size > 0.2) this.size -= 0.05;
-                
-                // Bounce off edges
-                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-            }
-            
-            draw() {
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-        
-        // Initialize particles
-        function init() {
-            for (let i = 0; i < numberOfParticles; i++) {
-                particlesArray.push(new Particle());
-            }
-        }
-        
-        // Animation loop
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-                
-                // Connect particles with lines
-                // Reduce connections for mobile to improve performance
-                const connectDistance = isMobile ? 80 : 100;
-                for (let j = i; j < particlesArray.length; j++) {
-                    const dx = particlesArray[i].x - particlesArray[j].x;
-                    const dy = particlesArray[i].y - particlesArray[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < connectDistance) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 180, 216, ${0.3 - (distance/connectDistance) * 0.3})`;
-                        ctx.lineWidth = 1;
-                        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-                        ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
-                        ctx.stroke();
-                    }
-                }
-                
-                // Replace particles when they get too small
-                if (particlesArray[i].size <= 0.2) {
-                    particlesArray.splice(i, 1);
-                    i--;
-                    particlesArray.push(new Particle());
-                }
-            }
-            
-            requestAnimationFrame(animate);
-        }
-        
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            canvas.width = heroSection.offsetWidth;
-            canvas.height = heroSection.offsetHeight;
-            init();
         });
         
-        // Start animation
-        init();
-        animate();
-    }
-    
-    // Initialize particle background
-    addParticleBackground();
-    
-    // We've already created the back-to-top button with createBackToTopButton
-    
-    // Add swipe functionality for mobile
-    if (isMobile) {
-        // For mobile - add touch gestures for navbar
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        document.addEventListener('touchstart', function(e) {
-            touchStartX = e.changedTouches[0].screenX;
-        }, false);
-        
-        document.addEventListener('touchend', function(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, false);
-        
-        function handleSwipe() {
-            // Swipe right to open menu
-            if (touchEndX - touchStartX > 100 && !nav.classList.contains('nav-active')) {
-                nav.classList.add('nav-active');
-                burger.classList.add('toggle');
-                
-                navItems.forEach((item, index) => {
-                    item.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                });
-            }
-            
-            // Swipe left to close menu
-            if (touchStartX - touchEndX > 100 && nav.classList.contains('nav-active')) {
-                nav.classList.remove('nav-active');
-                burger.classList.remove('toggle');
-                
-                navItems.forEach((item) => {
-                    item.style.animation = '';
-                });
-            }
+        // Try to load the PDF rendering script if iframe doesn't render well
+        // Add PDF.js script if not already available
+        if (typeof pdfjsLib === 'undefined') {
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js';
+            script.onload = function() {
+                renderPdfPreview();
+            };
+            document.head.appendChild(script);
+        } else {
+            renderPdfPreview();
         }
         
-        // Improve mobile form experience with auto-scroll
-        const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
-        
-        formInputs.forEach(input => {
-            input.addEventListener('focus', function() {
-                // Small delay to let keyboard appear
-                setTimeout(() => {
-                    // Scroll to keep input in view
-                    const rect = this.getBoundingClientRect();
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    const targetY = rect.top + scrollTop - 150; // 150px buffer above the input
+        // Function to render the PDF preview
+        function renderPdfPreview() {
+            if (typeof pdfjsLib !== 'undefined') {
+                // Configure worker
+                pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
+                
+                const pdfUrl = 'assets/DivijSinghThakurCS-Resume2025.pdf';
+                const iframe = document.querySelector('.resume-preview-img');
+                
+                // If iframe isn't rendering properly, replace with canvas
+                if (iframe && (iframe.clientHeight < 100 || getComputedStyle(iframe).visibility === 'hidden')) {
+                    const canvas = document.createElement('canvas');
+                    canvas.className = 'resume-preview-img';
+                    iframe.parentNode.replaceChild(canvas, iframe);
                     
-                    window.scrollTo({
-                        top: targetY,
-                        behavior: 'smooth'
+                    pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
+                        pdf.getPage(1).then(function(page) {
+                            const viewport = page.getViewport({scale: 1.5});
+                            canvas.width = viewport.width;
+                            canvas.height = viewport.height;
+                            
+                            const renderContext = {
+                                canvasContext: canvas.getContext('2d'),
+                                viewport: viewport
+                            };
+                            
+                            page.render(renderContext);
+                        });
                     });
-                }, 300);
-            });
-        });
+                }
+            }
+        }
     }
+    
+    // Initialize animations for fade in effects
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+    });
 }); 
