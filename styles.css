@@ -333,21 +333,87 @@ section {
 .image-container {
     width: 360px;
     height: 360px;
-    border-radius: 0;
-    overflow: hidden;
-    box-shadow: none;
+    border-radius: 5px;
+    overflow: visible;
     position: relative;
     padding: 0;
     background: none;
+    box-shadow: 0 0 20px rgba(0, 180, 216, 0.3);
+}
+
+/* Adding a subtle gradient background effect */
+.image-container::before {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 180, 216, 0.15) 0%,
+        rgba(0, 140, 180, 0.1) 40%,
+        rgba(18, 18, 18, 0.05) 70%,
+        rgba(18, 18, 18, 0) 100%
+    );
+    border-radius: 15px;
+    z-index: -1;
+    filter: blur(10px);
+    animation: pulseGlow 8s ease-in-out infinite alternate;
+}
+
+/* Dark overlay layer with accent color hint */
+.image-container::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    background: linear-gradient(
+        135deg,
+        transparent 20%,
+        rgba(0, 180, 216, 0.05) 50%,
+        transparent 80%
+    );
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0.8;
+    animation: rotateSlow 15s linear infinite;
+}
+
+@keyframes pulseGlow {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes rotateSlow {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .profile-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 0;
+    border-radius: 2px;
     transition: transform 0.5s ease;
     display: block;
+    /* A very slight zoom effect on the image */
+    animation: breathe 4s ease-in-out infinite alternate;
+}
+
+@keyframes breathe {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.03);
+    }
 }
 
 /* Scroll down arrow - redesigned layout */
@@ -455,8 +521,6 @@ section {
         width: 280px;
         height: 280px;
         max-width: 90vw;
-        border-radius: 0;
-        background-color: transparent;
         margin: 0 auto;
     }
     
@@ -464,6 +528,7 @@ section {
         object-fit: cover;
         max-width: 100%;
         max-height: 100%;
+        border-radius: 2px;
     }
     
     .hero-text h1 {
@@ -534,8 +599,9 @@ section {
     }
     
     .image-container {
-        width: 220px;
-        height: 220px;
+        width: 240px;
+        height: 240px;
+        border-radius: 20px;
     }
 }
 
@@ -1672,5 +1738,64 @@ footer {
     }
     50% { 
         opacity: 0; 
+    }
+}
+
+/* Animation for glowing border */
+@keyframes borderGlow {
+    0% {
+        box-shadow: 0 0 0 2px rgba(0, 180, 216, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(0, 180, 216, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 0 2px rgba(0, 180, 216, 0.2);
+    }
+}
+
+@keyframes borderRotate {
+    0% {
+        border-image-source: linear-gradient(0deg, transparent 50%, var(--accent-color) 50%);
+    }
+    25% {
+        border-image-source: linear-gradient(90deg, transparent 50%, var(--accent-color) 50%);
+    }
+    50% {
+        border-image-source: linear-gradient(180deg, transparent 50%, var(--accent-color) 50%);
+    }
+    75% {
+        border-image-source: linear-gradient(270deg, transparent 50%, var(--accent-color) 50%);
+    }
+    100% {
+        border-image-source: linear-gradient(360deg, transparent 50%, var(--accent-color) 50%);
+    }
+}
+
+/* Animation for experimental profile image border */
+@keyframes rotateHue {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes glitchBorder {
+    0%, 100% {
+        clip-path: inset(0 0 0 0);
+    }
+    20% {
+        clip-path: inset(0 0 0 3px);
+    }
+    40% {
+        clip-path: inset(3px 0 0 0);
+    }
+    60% {
+        clip-path: inset(0 3px 0 0);
+    }
+    80% {
+        clip-path: inset(0 0 3px 0);
     }
 }
