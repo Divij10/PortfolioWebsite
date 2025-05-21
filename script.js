@@ -2,13 +2,26 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Navigation and scrolling functionality
     const navbar = document.querySelector('.navbar');
+    const logo = document.querySelector('.logo');
     const navLinks = document.querySelectorAll('.nav-links li a');
     const sections = document.querySelectorAll('section');
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links li');
     const contactForm = document.getElementById('contact-form');
     const scrollDownBtn = document.querySelector('.scroll-down a');
-
+    const heroSection = document.querySelector('.hero');
+    
+    // Check if device is mobile
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // Hide logo initially
+    logo.style.opacity = '0';
+    logo.style.transform = 'translateY(-20px)';
+    
+    // Force dark mode as the only option
+    document.body.classList.add('dark-mode');
+    
     // Mobile navigation toggle
     burger.addEventListener('click', () => {
         // Toggle navigation
@@ -17,14 +30,34 @@ document.addEventListener('DOMContentLoaded', function() {
         // Burger animation
         burger.classList.toggle('toggle');
 
-        // Animate nav items
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-            }
+        // Reset animations first
+        navItems.forEach(item => {
+            item.style.animation = '';
         });
+        
+        // Force visible color for menu items
+        if (nav.classList.contains('nav-active')) {
+            // Small delay to ensure menu has started showing
+            setTimeout(() => {
+                // Manually apply styles for better visibility
+                navItems.forEach((item, index) => {
+                    // Force opacity to 1
+                    item.style.opacity = '0';
+                    
+                    // Force reflow
+                    void item.offsetWidth;
+                    
+                    // Let CSS animations take over
+                    item.style.animation = `navLinkFade 0.5s ease forwards ${index * 0.1 + 0.1}s`;
+                    
+                    // Ensure link text is visible
+                    const link = item.querySelector('a');
+                    if (link) {
+                        link.style.color = '#ffffff';
+                    }
+                });
+            }, 100);
+        }
     });
 
     // Close mobile menu when clicking outside
@@ -33,28 +66,76 @@ document.addEventListener('DOMContentLoaded', function() {
             nav.classList.remove('nav-active');
             burger.classList.remove('toggle');
             
-            navLinks.forEach((link) => {
-                link.style.animation = '';
+            navItems.forEach((item) => {
+                item.style.animation = '';
             });
         }
     });
 
+    // Close mobile menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (nav.classList.contains('nav-active')) {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+                
+                navItems.forEach((item) => {
+                    item.style.animation = '';
+                });
+            }
+        });
+    });
+
+    // Create back to top button
+    function createBackToTopButton() {
+        const backToTop = document.createElement('div');
+        backToTop.className = 'back-to-top';
+        backToTop.innerHTML = '<i class="fas fa-chevron-up"></i>';
+        document.body.appendChild(backToTop);
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Initialize back to top button
+    createBackToTopButton();
+    
     // Scroll event handling
     window.addEventListener('scroll', () => {
-        // Add shadow to navbar on scroll
-        if (window.scrollY > 50) {
+        const heroHeight = heroSection.offsetHeight;
+        const scrollPosition = window.scrollY;
+        const headerHeight = navbar.offsetHeight;
+        
+        // Show/hide logo based on scroll position
+        if (scrollPosition > (heroHeight - headerHeight)) {
+            logo.style.opacity = '1';
+            logo.style.transform = 'translateY(0)';
             navbar.classList.add('scrolled');
         } else {
+            logo.style.opacity = '0';
+            logo.style.transform = 'translateY(-20px)';
             navbar.classList.remove('scrolled');
         }
-
+        
         // Highlight active nav link based on scroll position
         let current = '';
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 100;
             const sectionHeight = section.offsetHeight;
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');
             }
         });
@@ -80,8 +161,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 nav.classList.remove('nav-active');
                 burger.classList.remove('toggle');
                 
-                navLinks.forEach((link) => {
-                    link.style.animation = '';
+                navItems.forEach((item) => {
+                    item.style.animation = '';
                 });
             }
             
@@ -109,77 +190,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Dark mode toggle functionality
-    const createDarkModeToggle = () => {
-        // Create the toggle element
-        const toggle = document.createElement('div');
-        toggle.className = 'dark-mode-toggle';
-        toggle.innerHTML = '<i class="fas fa-moon"></i>';
-        document.body.appendChild(toggle);
-
-        // Check for saved user preference
-        if (localStorage.getItem('dark-mode') === 'enabled') {
-            document.body.classList.add('dark-mode');
-            toggle.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-
-        // Toggle dark mode
-        toggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            
-            if (document.body.classList.contains('dark-mode')) {
-                localStorage.setItem('dark-mode', 'enabled');
-                toggle.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                localStorage.setItem('dark-mode', 'disabled');
-                toggle.innerHTML = '<i class="fas fa-moon"></i>';
-            }
-        });
-
-        // Style the toggle button with CSS
-        const style = document.createElement('style');
-        style.textContent = `
-            .dark-mode-toggle {
-                position: fixed;
-                bottom: 30px;
-                right: 30px;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                background-color: var(--primary-color);
-                color: white;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                z-index: 999;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-                transition: var(--transition);
-            }
-            
-            .dark-mode-toggle:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-            }
-            
-            .dark-mode .dark-mode-toggle {
-                background-color: var(--dark-primary);
-                box-shadow: 0 4px 10px rgba(0, 180, 216, 0.3);
-            }
-            
-            .dark-mode .dark-mode-toggle:hover {
-                box-shadow: 0 8px 15px rgba(0, 180, 216, 0.4);
-            }
-            
-            .dark-mode-toggle i {
-                font-size: 1.5rem;
-            }
-        `;
-        document.head.appendChild(style);
-    };
-
-    createDarkModeToggle();
-    
     // Animation on scroll functionality
     function animateOnScroll() {
         const elements = document.querySelectorAll('.project-card, .skill-category, .detail');
@@ -239,12 +249,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Form will be submitted to Formspree, which will email you at dthakur9@asu.edu
             // This message will be shown briefly before the form submits
             showFormMessage('Thank you for your message, ' + name + '! I will get back to you soon.', 'success');
-            
-            // Allow the form to naturally submit after a short delay to show the thank you message
-            // e.preventDefault();
-            // setTimeout(() => {
-            //     contactForm.submit();
-            // }, 2000);
         });
     }
 
@@ -294,50 +298,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
 
-    // Typing animation for hero text
-    function setupTypewriter() {
-        const heroHeading = document.querySelector('.hero-text h1');
-        const originalText = heroHeading.textContent;
-        
-        // Clear original text
-        heroHeading.textContent = '';
-        
-        // Create span with typing animation
-        const typingSpan = document.createElement('span');
-        typingSpan.className = 'typing';
-        typingSpan.textContent = originalText;
-        heroHeading.appendChild(typingSpan);
-        
-        // Add typing effect CSS
-        const style = document.createElement('style');
-        style.textContent = `
-            .typing {
-                display: inline-block;
-                position: relative;
-            }
-
-            .typing::after {
-                content: '';
-                position: absolute;
-                right: -5px;
-                top: 10%;
-                height: 80%;
-                width: 2px;
-                background-color: var(--secondary-color);
-                animation: blink 0.7s infinite;
-            }
-
-            @keyframes blink {
-                0%, 100% { opacity: 1; }
-                50% { opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-
-    // Initialize typing animation
-    setupTypewriter();
-
     // Add particle background effect to hero section
     function addParticleBackground() {
         const heroSection = document.querySelector('.hero');
@@ -360,7 +320,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 width: 100%;
                 height: 100%;
                 z-index: -1;
-                opacity: 0.4;
+                opacity: 0.6;
             }
         `;
         document.head.appendChild(style);
@@ -372,7 +332,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Particle properties
         const particlesArray = [];
-        const numberOfParticles = 80;
+        // Reduce particles for mobile devices
+        const numberOfParticles = isMobile ? 40 : 80;
         
         // Create particle class
         class Particle {
@@ -420,14 +381,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 particlesArray[i].draw();
                 
                 // Connect particles with lines
+                // Reduce connections for mobile to improve performance
+                const connectDistance = isMobile ? 80 : 100;
                 for (let j = i; j < particlesArray.length; j++) {
                     const dx = particlesArray[i].x - particlesArray[j].x;
                     const dy = particlesArray[i].y - particlesArray[j].y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
                     
-                    if (distance < 100) {
+                    if (distance < connectDistance) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 180, 216, ${0.3 - (distance/100) * 0.3})`;
+                        ctx.strokeStyle = `rgba(0, 180, 216, ${0.3 - (distance/connectDistance) * 0.3})`;
                         ctx.lineWidth = 1;
                         ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
                         ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
@@ -461,82 +424,63 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize particle background
     addParticleBackground();
     
-    // Create scroll to top button
-    function createScrollTopButton() {
-        // Create button element
-        const scrollTopBtn = document.createElement('div');
-        scrollTopBtn.className = 'scroll-top-btn';
-        scrollTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
-        document.body.appendChild(scrollTopBtn);
+    // We've already created the back-to-top button with createBackToTopButton
+    
+    // Add swipe functionality for mobile
+    if (isMobile) {
+        // For mobile - add touch gestures for navbar
+        let touchStartX = 0;
+        let touchEndX = 0;
         
-        // Add scroll event listener
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+        
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+        
+        function handleSwipe() {
+            // Swipe right to open menu
+            if (touchEndX - touchStartX > 100 && !nav.classList.contains('nav-active')) {
+                nav.classList.add('nav-active');
+                burger.classList.add('toggle');
+                
+                navItems.forEach((item, index) => {
+                    item.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                });
             }
-        });
+            
+            // Swipe left to close menu
+            if (touchStartX - touchEndX > 100 && nav.classList.contains('nav-active')) {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+                
+                navItems.forEach((item) => {
+                    item.style.animation = '';
+                });
+            }
+        }
         
-        // Add click event
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        // Improve mobile form experience with auto-scroll
+        const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
+        
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                // Small delay to let keyboard appear
+                setTimeout(() => {
+                    // Scroll to keep input in view
+                    const rect = this.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const targetY = rect.top + scrollTop - 150; // 150px buffer above the input
+                    
+                    window.scrollTo({
+                        top: targetY,
+                        behavior: 'smooth'
+                    });
+                }, 300);
             });
         });
-        
-        // Add styles
-        const style = document.createElement('style');
-        style.textContent = `
-            .scroll-top-btn {
-                position: fixed;
-                bottom: 30px;
-                left: 30px;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                background-color: var(--secondary-color);
-                color: white;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                z-index: 999;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-                transition: var(--transition);
-                opacity: 0;
-                visibility: hidden;
-                transform: translateY(20px);
-            }
-            
-            .scroll-top-btn.visible {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0);
-            }
-            
-            .scroll-top-btn:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-            }
-            
-            .dark-mode .scroll-top-btn {
-                background-color: var(--dark-secondary);
-                box-shadow: 0 4px 10px rgba(0, 150, 199, 0.3);
-            }
-            
-            .dark-mode .scroll-top-btn:hover {
-                box-shadow: 0 8px 15px rgba(0, 150, 199, 0.4);
-            }
-            
-            .scroll-top-btn i {
-                font-size: 1.5rem;
-            }
-        `;
-        document.head.appendChild(style);
     }
-    
-    // Initialize scroll to top button
-    createScrollTopButton();
 }); 
