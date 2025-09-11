@@ -799,6 +799,29 @@ section {
     border-color: var(--accent-color);
 }
 
+/* Clickable timeline items styling */
+.clickable-timeline {
+    transition: all 0.3s ease;
+}
+
+.clickable-timeline .timeline-content {
+    cursor: pointer;
+}
+
+.clickable-timeline .timeline-content:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 180, 216, 0.2);
+    border-color: var(--accent-color);
+}
+
+.clickable-timeline .timeline-content:hover .company-name {
+    color: var(--accent-color);
+}
+
+.clickable-timeline .timeline-content:active {
+    transform: translateY(-3px);
+}
+
 .timeline-date {
     display: block;
     font-size: 0.85rem;
