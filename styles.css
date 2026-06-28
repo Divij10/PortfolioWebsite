@@ -848,6 +848,31 @@ ul { list-style: none; }
 }
 
 /* ─────────────────────────────────────────────────────────
+   LAPTOP  (≤ 1750px)
+   Scale down for typical laptop screens (~1280–1728px CSS px).
+   Overridden by smaller breakpoints below.
+──────────────────────────────────────────────────────────── */
+
+@media (max-width: 1750px) {
+  /* Main page */
+  .section { padding: 52px 52px; }
+  .section-intro { padding-top: 68px; padding-bottom: 68px; }
+  .intro-text { font-size: 16px; }
+  .work-title { font-size: 30px; }
+
+  /* Contact panel */
+  .contact-title { font-size: 56px; }
+  .contact-panel:hover .contact-title,
+  .contact-panel.pinned .contact-title { font-size: 37px; }
+  .contact-inner { padding: 36px 32px; }
+
+  /* Detail pages */
+  .detail-content { padding: 64px 60px 96px; }
+  .detail-title { font-size: 58px; }
+  .detail-description { font-size: 16px; margin-bottom: 36px; }
+}
+
+/* ─────────────────────────────────────────────────────────
    TABLET  (≤ 1100px)
    Narrow the sidebar & contact panel; shrink fonts/padding.
 ──────────────────────────────────────────────────────────── */
