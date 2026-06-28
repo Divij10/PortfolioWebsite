@@ -1018,15 +1018,34 @@ ul { list-style: none; }
   /* Detail pages */
   .detail-grid { display: flex; flex-direction: column; }
 
+  /* Detail sidebar: same stacked pattern as home page header */
   .detail-sidebar {
     position: static;
     height: auto;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 20px;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
     border-right: none;
+    border-bottom: none;
+    gap: 0;
+    justify-content: flex-start;
+  }
+
+  /* Name block matches home page exactly */
+  .detail-sidebar .site-name {
+    font-size: 20px;
+    line-height: 1.25;
+    padding: 18px 20px 14px;
     border-bottom: 1px solid var(--border);
+  }
+
+  /* Back link styled like a nav strip item */
+  .back-link {
+    display: block;
+    padding: 12px 18px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
   }
 
   .detail-content { padding: 36px 20px 72px; }
