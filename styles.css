@@ -727,8 +727,11 @@ ul { list-style: none; }
   gap: 48px;
 }
 
+.detail-main { min-width: 0; }
+
 .detail-image-col {
   align-self: end; /* pins preview/image to the bottom of the grid row */
+  min-width: 0;    /* prevent grid item from blowing out due to iframe's 1280px width */
 }
 
 .detail-screenshot {
