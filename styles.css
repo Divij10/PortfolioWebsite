@@ -898,30 +898,10 @@ ul { list-style: none; }
   /* Resume PDF preview: reduce height on smaller screens */
   .resume-iframe { height: 480px; }
 
-  /* Detail body: switch to single column */
+  /* Detail body: switch to single column, hide browser mockup */
   .detail-body { grid-template-columns: 1fr; gap: 32px; align-items: start; }
   .detail-image-col { align-self: auto; }
-  .preview-viewport { height: auto !important; }
-  .detail-preview { display: none; } /* hide scaled iframe on small screens */
-  .preview-browser {
-    display: flex;
-    flex-direction: column;
-  }
-  /* Show a simple link button instead of the iframe */
-  .preview-overlay {
-    position: static;
-    background: #1a1a1a !important;
-    height: 56px;
-    opacity: 1 !important;
-  }
-  .preview-visit {
-    opacity: 1 !important;
-    transform: none !important;
-    font-size: 13px;
-    background: transparent;
-    border: none;
-    padding: 0;
-  }
+  .preview-browser { display: none; }
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -936,38 +916,46 @@ ul { list-style: none; }
     flex-direction: column;
   }
 
-  /* Sidebar → compact top bar */
+  /* Sidebar → stacked: name on top, scrollable nav row below */
   .sidebar {
     position: static;
     height: auto;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 20px;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
     border-right: none;
+    border-bottom: none; /* nav row has its own border */
+    gap: 0;
+  }
+
+  .site-name {
+    font-size: 20px;
+    line-height: 1.25;
+    padding: 18px 20px 14px;
     border-bottom: 1px solid var(--border);
   }
 
-  .site-name { font-size: 18px; line-height: 1.2; }
-
-  /* Nav: horizontal scrollable row */
+  /* Nav: full-width horizontally scrollable strip */
   .sidebar-nav {
     flex-direction: row;
     gap: 0;
+    margin-top: 0;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding: 0 20px 12px;
+    padding: 0;
     border-bottom: 1px solid var(--border);
     background: var(--bg);
   }
   .sidebar-nav::-webkit-scrollbar { display: none; }
   .nav-link {
     flex-shrink: 0;
-    padding: 8px 14px;
+    padding: 12px 18px;
     font-size: 13px;
     white-space: nowrap;
+    border-right: 1px solid var(--border);
   }
+  .nav-link:last-child { border-right: none; }
 
   .center { flex: 1; }
 
@@ -1049,25 +1037,7 @@ ul { list-style: none; }
   .detail-body { grid-template-columns: 1fr; gap: 28px; align-items: start; }
   .detail-image-col { align-self: auto; }
 
-  /* Hide iframe previews on phone — just show the link */
-  .detail-preview { display: none; }
-  .preview-viewport { display: none; }
-  .preview-bar { border-radius: 0; }
-  .preview-browser {
-    border-radius: 6px;
-  }
-  .preview-overlay {
-    position: static;
-    background: #1a1a1a !important;
-    height: 52px;
-    opacity: 1 !important;
-    border-top: 1px solid #2a2a2a;
-  }
-  .preview-visit {
-    opacity: 1 !important;
-    transform: none !important;
-    background: transparent;
-    border: none;
-    padding: 0;
-  }
+  /* Hide the browser mockup entirely on phone — visit link in content suffices */
+  .preview-browser { display: none; }
+  .detail-image-col { display: none; }
 }
