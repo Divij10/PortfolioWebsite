@@ -848,28 +848,28 @@ ul { list-style: none; }
 }
 
 /* ─────────────────────────────────────────────────────────
-   LAPTOP  (≤ 1750px)
-   Scale down for typical laptop screens (~1280–1728px CSS px).
+   LAPTOP  (≤ 2200px)
+   Scale down for laptop & typical external monitor screens.
    Overridden by smaller breakpoints below.
 ──────────────────────────────────────────────────────────── */
 
-@media (max-width: 1750px) {
+@media (max-width: 2200px) {
   /* Main page */
-  .section { padding: 52px 52px; }
-  .section-intro { padding-top: 68px; padding-bottom: 68px; }
+  .section { padding: 44px 44px; }
+  .section-intro { padding-top: 60px; padding-bottom: 60px; }
   .intro-text { font-size: 16px; }
-  .work-title { font-size: 30px; }
+  .work-title { font-size: 24px; }
 
   /* Contact panel */
-  .contact-title { font-size: 56px; }
+  .contact-title { font-size: 50px; }
   .contact-panel:hover .contact-title,
-  .contact-panel.pinned .contact-title { font-size: 37px; }
-  .contact-inner { padding: 36px 32px; }
+  .contact-panel.pinned .contact-title { font-size: 34px; }
+  .contact-inner { padding: 34px 28px; }
 
   /* Detail pages */
-  .detail-content { padding: 64px 60px 96px; }
-  .detail-title { font-size: 58px; }
-  .detail-description { font-size: 16px; margin-bottom: 36px; }
+  .detail-content { padding: 52px 52px 80px; }
+  .detail-title { font-size: 44px; }
+  .detail-description { font-size: 16px; margin-bottom: 32px; }
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -885,17 +885,17 @@ ul { list-style: none; }
   }
 
   /* Main layout */
-  .section { padding: 52px 36px; }
-  .section-intro { padding-top: 64px; padding-bottom: 64px; }
-  .work-title { font-size: 28px; }
-  .contact-title { font-size: 48px; }
+  .section { padding: 40px 32px; }
+  .section-intro { padding-top: 52px; padding-bottom: 52px; }
+  .work-title { font-size: 22px; }
+  .contact-title { font-size: 44px; }
   .contact-panel:hover .contact-title,
-  .contact-panel.pinned .contact-title { font-size: 32px; }
-  .contact-inner { padding: 36px 28px; }
+  .contact-panel.pinned .contact-title { font-size: 30px; }
+  .contact-inner { padding: 32px 24px; }
 
   /* Detail pages */
-  .detail-content { padding: 64px 48px 100px; }
-  .detail-title { font-size: 60px; }
+  .detail-content { padding: 48px 40px 80px; }
+  .detail-title { font-size: 38px; }
   .form-row { grid-template-columns: 1fr; gap: 11px; }
 
   /* Detail two-column: keep columns but proportion-based */
