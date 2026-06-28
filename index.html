@@ -1,611 +1,306 @@
 <!DOCTYPE html>
-<!-- Updated version - forced refresh for GitHub Pages - Update 2 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#121212">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Divij Singh Thakur | Portfolio</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23121212'/%3E%3Cpath d='M40,25 L60,25 C70,25 75,35 75,45 C75,55 70,65 60,65 L40,65 Z' fill='%23646cff'/%3E%3Cpath d='M45,35 L60,35 C65,35 65,45 65,45 C65,45 65,55 60,55 L45,55 Z' fill='%23121212'/%3E%3C/svg%3E">
-    
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Divij Singh Thakur | Portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Computer Science student at Arizona State University with experience in AI, web development, and software engineering.">
     <meta name="author" content="Divij Singh Thakur">
-    <meta name="keywords" content="portfolio, software engineer, computer science, developer, ASU, Arizona State University, machine learning, AI">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://divij10.github.io/">
-    <meta property="og:title" content="Divij Singh Thakur | Portfolio">
-    <meta property="og:description" content="Computer Science student at Arizona State University with experience in AI, web development, and software engineering.">
-    <meta property="og:image" content="https://divij10.github.io/assets/bloom.png">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://divij10.github.io/">
-    <meta property="twitter:title" content="Divij Singh Thakur | Portfolio">
-    <meta property="twitter:description" content="Computer Science student at Arizona State University with experience in AI, web development, and software engineering.">
-    <meta property="twitter:image" content="https://divij10.github.io/assets/bloom.png">
-    
+    <title>Divij Singh Thakur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Divij Singh Thakur</div>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
-    </header>
+    <div class="page-grid">
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Divij Singh Thakur<span class="cursor"></span></h1>
-                    <h2>Computer Science Student & Developer</h2>
-                    <p>Building innovative solutions with modern technology.</p>
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <div class="stat-number">3+</div>
-                            <div class="stat-label">Years of Experience</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Projects Completed</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Technologies</div>
-                        </div>
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn primary-btn">View Projects</a>
-                        <a href="#contact" class="btn secondary-btn">Contact Me</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="image-container">
-                        <img src="assets/Screenshot 2025-05-20 at 13.45.53.png" alt="Divij Singh Thakur" class="profile-image">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Scroll Down Button (Properly positioned within the hero section) -->
-            <div class="scroll-down">
-                <a href="#about">
-                    <i class="fas fa-chevron-down"></i>
-                </a>
-            </div>
-        </section>
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <a href="#" class="site-name">Divij Singh<br>Thakur</a>
+            <nav class="sidebar-nav">
+                <a href="#work"       class="nav-link">Work</a>
+                <a href="#projects"   class="nav-link">Projects</a>
+                <a href="#skills"     class="nav-link">Skills</a>
+                <a href="#resume"     class="nav-link">Resume</a>
+                <a href="#education"  class="nav-link">Education</a>
+                <a href="#leadership" class="nav-link">Leadership</a>
+            </nav>
+        </aside>
 
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="section-title">
-                <h2>About Me</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a Computer Science student at Arizona State University, passionate about building innovative applications and leveraging emerging technologies. With experience ranging from cloud computing and AI development to immersive software engineering, I enjoy creating impactful solutions while helping others succeed.</p>
-                    <p>Currently, I'm working as a Capstone Software Engineering Intern on NASA's Psyche Mission, where I'm developing real-time control scripts and optimizing 3D immersive experiences for 10,000+ K–12 visitors. I also serve as a Teaching Assistant for CIS 194: Cloud Foundations, guiding over 1,000 students through AWS best practices and cloud-native architecture.</p>
-                    <p>Previously, I've interned at NXPRO, where I designed and deployed full-stack web solutions and AI monitoring tools, and at the Semi-Conductor Laboratory in India, where I contributed to automation and statistical analysis for semiconductor testing.</p>
-                    <div class="about-details">
-                        <div class="detail">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div>
-                                <h3>Education</h3>
-                                <p>B.S. in Computer Science, Arizona State University</p>
-                                <p>Expected Graduation: May 2026</p>
-                                <p>Dean's List, NAU Scholar, Outstanding Leadership Award</p>
+        <!-- Center Content -->
+        <main class="center">
+
+            <!-- Intro -->
+            <section class="section section-intro">
+                <p class="intro-text">I'm a Computer Science student at Arizona State University. I build AI-powered applications and innovative software solutions, with experience in machine learning, full-stack development, and systems engineering.</p>
+                <a href="#work" class="text-link">See My Work ↗</a>
+            </section>
+
+            <!-- Work Experience -->
+            <section class="section" id="work">
+                <header class="section-head">
+                    <span class="section-label">Work</span>
+                    <span class="section-rule"></span>
+                </header>
+                <ul class="work-list">
+                    <li>
+                        <a href="nasa.html" class="work-item">
+                            <div class="work-item-info">
+                                <span class="work-title">NASA: Psyche Mission</span>
+                                <span class="work-role">Capstone Software Engineering Intern</span>
                             </div>
-                        </div>
-                        <div class="detail">
-                            <i class="fas fa-user-tie"></i>
-                            <div>
-                                <h3>Leadership</h3>
-                                <p><strong>President</strong>, <strong>Connecting International Communities</strong></p>
-                                <p>Leading a student organization of 750+ members</p>
-                                <p><strong>Campus Partner</strong> at <strong>Perplexity</strong></p>
-                                <p>Promoting AI-powered research tools and leading community outreach</p>
-                                <p><strong>Student Ambassador</strong> at <strong>Adobe</strong></p>
-                                <p>Representing Adobe Creative Cloud through workshops and design initiatives</p>
+                            <span class="work-year">2025</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="nxpro.html" class="work-item">
+                            <div class="work-item-info">
+                                <span class="work-title">NXPRO</span>
+                                <span class="work-role">Software Engineering Intern</span>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                            <span class="work-year">2025</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="aznext.html" class="work-item">
+                            <div class="work-item-info">
+                                <span class="work-title">AZNext</span>
+                                <span class="work-role">Program Coordinator Assistant</span>
+                            </div>
+                            <span class="work-year">2023</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="silc.html" class="work-item">
+                            <div class="work-item-info">
+                                <span class="work-title">SILC, ASU</span>
+                                <span class="work-role">Technology Support Assistant</span>
+                            </div>
+                            <span class="work-year">2024</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="scl.html" class="work-item">
+                            <div class="work-item-info">
+                                <span class="work-title">Semi-Conductor Laboratory</span>
+                                <span class="work-role">Software Engineering Intern</span>
+                            </div>
+                            <span class="work-year">2023</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="experience">
-            <div class="section-title">
-                <h2>Work Experience</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item clickable-timeline" onclick="window.open('https://psyche.ssl.berkeley.edu/', '_blank')">
-                    <div class="timeline-content">
-                        <span class="job-title">Capstone Software Engineering Intern</span>
-                        <span class="company-name">NASA: Psyche Mission (ASU – Marston Theater)</span>
-                        <p class="timeline-date">September 2025 - Present | Tempe, Arizona</p>
-                        <ul>
-                            <li>Building an immersive NASA Psyche 3D show in Digital Sky Dark Matter; authoring real-time control scripts and a Python content pipeline with Git/CI to improve performance by 30,000+ DCM-14 actions; packaging for NASA MHFA distribution.</li>
-                            <li>Collaborating cross-functionally with graphic design students and theater docents to turn mission science into accessible UX; contributing to sprint planning, and applying accessibility standards, code reviews, and test automation to ensure reliability and maintainability.</li>
-                            <li>Optimizing complex 3D scenes to improve scalability, reduce load times, and validate performance across multi-projector theater hardware.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item clickable-timeline" onclick="window.open('https://nxpro.com/', '_blank')">
-                    <div class="timeline-content">
-                        <span class="job-title">Software Engineering Intern</span>
-                        <span class="company-name">NXPRO: Next Generation Professionals</span>
-                        <p class="timeline-date">May 2025 – Present | San Jose, California</p>
-                        <ul>
-                            <li>Designed and developed full‑stack web and e-commerce applications using Java, Spring Boot, Angular, HTML, CSS, and JavaScript, implementing RESTful APIs to enable seamless data exchange between front‑end and back‑end systems.</li>
-                            <li>Built and customized WordPress/PHP/MySQL solutions and integrated third‑party APIs (such as payment gateways and social media platforms) to enhance application functionality and support ecommerce workflows.</li>
-                            <li>Developed and optimized SQL queries to improve application performance and data retrieval speed, resulting in more responsive user experiences and faster reporting.</li>
-                            <li>Implemented machine learning algorithms for predictive analytics (New York Taxi trip duration, Netflix movie recommendation, Pima Indians Diabetes analysis) using Python, Pandas, and scikit‑learn to preprocess, clean, and analyze large datasets and derive actionable insights.</li>
-                            <li>Conducted A/B testing, statistical analysis, and exploratory data analysis/visualization on marketing and customer behavior data, driving a 20% increase in conversion rates and a 10% increase in customer satisfaction, while collaborating with QA and cross‑functional teams in Agile ceremonies (stand‑ups, sprint planning, retrospectives).</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item clickable-timeline" onclick="window.open('https://wpcarey.asu.edu/aznext', '_blank')">
-                    <div class="timeline-content">
-                        <span class="job-title">Program Coordinator Assistant</span>
-                        <span class="company-name">AZNext: Workforce Training Accelerator Program</span>
-                        <p class="timeline-date">March 2023 - Present | Tempe, Arizona</p>
-                        <ul>
-                            <li>Delivered instructional support for CIS 194 by facilitating review sessions to help students prepare for the AWS Certified Cloud Practitioner exam.</li>
-                            <li>Collaborated with faculty to improve student engagement and track learning outcomes; leveraged Salesforce CRM to assist the research team in analyzing participant success metrics and program feedback.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item clickable-timeline" onclick="window.open('https://silc.asu.edu/learning-support-services/lss-for-students', '_blank')">
-                    <div class="timeline-content">
-                        <span class="job-title">Technology Support Assistant</span>
-                        <span class="company-name">School of International Letters & Cultures</span>
-                        <p class="timeline-date">January 2024 - March 2025 | Tempe, Arizona</p>
-                        <ul>
-                            <li>Provided technical and logistical support to over 3,000 students and faculty by coordinating space scheduling, delivering services, and maintaining class infrastructure.</li>
-                            <li>Designed and implemented the SILC Cataloging Bot, reducing cataloging time by 50% and minimizing errors in Library resource processing.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item clickable-timeline" onclick="window.open('https://www.scl.gov.in/', '_blank')">
-                    <div class="timeline-content">
-                        <span class="job-title">Software Engineering Intern</span>
-                        <span class="company-name">Semi-Conductor Laboratory</span>
-                        <p class="timeline-date">June 2023 - July 2023 | Punjab, India</p>
-                        <ul>
-                            <li>Conducted statistical analysis on datasets with over 100,000 entries using JMP software, identifying trends and anomalies to support yield improvement efforts in semiconductor fabrication.</li>
-                            <li>Collaborated on a Java-based automation tool that streamlined data sorting for semiconductor testing logs, reducing processing time by 20% and improving data pipeline efficiency.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <!-- Projects -->
+            <section class="section" id="projects">
+                <header class="section-head">
+                    <span class="section-label">Projects</span>
+                    <span class="section-rule"></span>
+                </header>
+                <ul class="work-list projects-list">
+                    <li>
+                        <a href="cuda-coach.html" class="work-item">
+                            <div class="work-item-info">
+                                <span class="work-title">CUDA-Coach</span>
+                                <span class="work-role">React · TypeScript · Flask · Hugging Face</span>
+                            </div>
+                            <span class="work-year">2025</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="bloom.html" class="work-item">
+                            <div class="work-item-info">
+                                <span class="work-title">Bloom</span>
+                                <span class="work-role">JavaScript · OpenAI API · Socket.IO · MediaPipe</span>
+                            </div>
+                            <span class="work-year">2025</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="emberwatch.html" class="work-item">
+                            <div class="work-item-info">
+                                <span class="work-title">EmberWatch</span>
+                                <span class="work-role">Python · Flask · PyTorch · TensorFlow</span>
+                            </div>
+                            <span class="work-year">2025</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sun-devil-book-exchange.html" class="work-item">
+                            <div class="work-item-info">
+                                <span class="work-title">Sun Devil Book Exchange</span>
+                                <span class="work-role">Java · JavaFX · File I/O</span>
+                            </div>
+                            <span class="work-year">2024</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="textwise.html" class="work-item">
+                            <div class="work-item-info">
+                                <span class="work-title">TextWise</span>
+                                <span class="work-role">Python · Flask · Twilio · OpenAI API</span>
+                            </div>
+                            <span class="work-year">2024</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="prodbot.html" class="work-item">
+                            <div class="work-item-info">
+                                <span class="work-title">Prodbot</span>
+                                <span class="work-role">NLP · Prompt Engineering · ICS Parsing</span>
+                            </div>
+                            <span class="work-year">2024</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <div class="section-title">
-                <h2>Top Projects</h2>
-                <div class="underline"></div>
-            </div>
-            
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/cudacoach.png" alt="CUDA-Coach AI Tutoring Platform">
-                    </div>
-                    <div class="project-content">
-                        <h3>CUDA-Coach – AI Tutor for CUDA & Parallel Computing</h3>
-                        <p class="project-tech">React, TypeScript, Flask, Python, Hugging Face</p>
-                        <p class="project-date">June 2025 | Tempe, Arizona</p>
-                        <ul>
-                            <li>Developed an AI-powered tutoring platform to simplify CUDA learning and GPU-accelerated workflows, leveraging quantized Mixture-of-Experts models (BitsAndBytes 4-bit).</li>
-                            <li>Implemented real-time CUDA syntax guidance, secure authentication, and GPU-backed caching via Hugging Face Hub.</li>
-                            <li>Built an integration-ready system for university courses/bootcamps, with React/TypeScript front-end and Flask-based backend.</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://github.com/Divij10/cuda-coach" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://textwise.my.canva.site/cuda-coach" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/bloom.png" alt="Bloom AI Project">
-                    </div>
-                    <div class="project-content">
-                        <h3>Bloom – AR Emotion Recognition</h3>
-                        <p class="project-tech">JavaScript, Node.js, OpenAI API, Socket.IO, MediaPipe</p>
-                        <p class="project-date">April 2025 | Tempe, Arizona</p>
-                        <ul>
-                            <li>Developed an interactive web application that detects real-time user emotions using facial landmark tracking, enabling dynamic AR visualizations that reflect emotional states.</li>
-                            <li>Engineered a contextual AI journaling and chatbot system using OpenAI's API, integrated with a gamified wellness tracker featuring streak-based digital garden growth to deliver personalized mental health support and encourage daily emotional check-ins.</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://github.com/Divij10/BloomAI" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://textwise.my.canva.site/bloom" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/emberwatch.png" alt="EmberWatch Project">
-                    </div>
-                    <div class="project-content">
-                        <h3>EmberWatch – AI-Powered Wildfire Detection</h3>
-                        <p class="project-tech">Python, Flask, HTML, CSS, JavaScript, PyTorch, TensorFlow</p>
-                        <p class="project-date">February 2025 | Tempe, Arizona</p>
-                        <ul>
-                            <li>Developed a CNN-based image classifier using PyTorch and TensorFlow, achieving high-accuracy wildfire detection across real-world datasets.</li>
-                            <li>Deployed a Flask-based web application enabling real-time image uploads and automatic fire/no-fire classification.</li>
-                            <li>Evaluated the feasibility of integrating satellite and drone imagery, outlining a pipeline for large-scale deployment and real-time alerts.</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://github.com/sathwin/EmberWatch" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/sundevilbookexchange.png" alt="Sun Devil Book Exchange Project">
-                    </div>
-                    <div class="project-content">
-                        <h3>Sun Devil Book Exchange</h3>
-                        <p class="project-tech">JavaFX, Java, FILE I/O</p>
-                        <p class="project-date">August 2024 – December 2024 | Tempe, Arizona</p>
-                        <ul>
-                            <li>Designed and built a full-stack JavaFX application that allowed students to list, filter, and purchase textbooks via intuitive UI components.</li>
-                            <li>Implemented auto-pricing logic using file I/O to dynamically suggest competitive prices based on prior listing trends and book condition.</li>
-                            <li>Added buyer and seller account features, increasing engagement, and successfully demoed to a class of 50+ students with positive feedback.</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://github.com/Zaid-Taiyab/Sun-Devil-Book-Exchange" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://www.youtube.com/watch?v=vrAjNVYSa-U&ab_channel=DivijSinghThakur" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/Textwise.png" alt="TextWise Project">
-                    </div>
-                    <div class="project-content">
-                        <h3>TextWise – AI-Powered SMS Learning Platform</h3>
-                        <p class="project-tech">Python, Flask, HTML, CSS, JavaScript</p>
-                        <p class="project-date">October 2024 | Tempe, Arizona</p>
-                        <ul>
-                            <li>Engineered an SMS learning assistant, enabling personalized content delivery via text for low-connectivity users.</li>
-                            <li>Built and optimized the backend using Python and Flask, reducing API response time by 30% while integrating Twilio for SMS delivery and OpenAI for personalized content.</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://github.com/Divij10/TextWise" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://devpost.com/software/tetwise" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/prodbot.png" alt="Prodbot Project">
-                    </div>
-                    <div class="project-content">
-                        <h3>Prodbot – OpenAI Hackathon Project</h3>
-                        <p class="project-tech">Natural Language Processing, Prompt Engineering</p>
-                        <p class="project-date">September 2024 | Tempe, Arizona</p>
-                        <ul>
-                            <li>Built an AI-powered bot that parsed 100+ ICS files to automate class schedule management for Canvas users, saving ~2 hours/week per user.</li>
-                            <li>Implemented NLP-driven prompts and reminders to enhance productivity and reduce cognitive load during peak academic periods.</li>
-                            <li>Recognized in the top 10% of OpenAI Hackathon submissions for technical innovation, UX design, and real-world applicability.</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://textwise.my.canva.site/introducing-prodbot" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <!-- Skills -->
+            <section class="section" id="skills">
+                <header class="section-head">
+                    <span class="section-label">Skills</span>
+                    <span class="section-rule"></span>
+                </header>
+                <ul class="skills-list">
+                    <li class="skill-row">
+                        <span class="skill-category">Programming</span>
+                        <span class="skill-items">Python · JavaScript · Java · C/C++ · TypeScript · SQL</span>
+                    </li>
+                    <li class="skill-row">
+                        <span class="skill-category">Frameworks</span>
+                        <span class="skill-items">React · Node.js · Flask · Spring Boot · Angular · JavaFX</span>
+                    </li>
+                    <li class="skill-row">
+                        <span class="skill-category">ML / AI</span>
+                        <span class="skill-items">TensorFlow · PyTorch · Scikit-learn · Pandas · NumPy · Hugging Face</span>
+                    </li>
+                    <li class="skill-row">
+                        <span class="skill-category">Cloud & DevOps</span>
+                        <span class="skill-items">AWS · Docker · Git · GitHub Actions</span>
+                    </li>
+                    <li class="skill-row">
+                        <span class="skill-category">Web</span>
+                        <span class="skill-items">HTML · CSS · REST APIs · WordPress · PHP · MySQL</span>
+                    </li>
+                    <li class="skill-row">
+                        <span class="skill-category">Tools</span>
+                        <span class="skill-items">Figma · JMP Pro · Microsoft Office · Salesforce</span>
+                    </li>
+                </ul>
+            </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills">
-            <div class="section-title">
-                <h2>Technical Skills</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Programming Languages & Frameworks</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-java"></i>
-                            <span>Java</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            <span>C/C++</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>SQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-aws"></i>
-                            <span>AWS</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>JavaFX</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-brain"></i>
-                            <span>TensorFlow</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-fire"></i>
-                            <span>PyTorch</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            <span>TypeScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>React</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-node-js"></i>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-robot"></i>
-                            <span>Hugging Face</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Web Technologies</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt"></i>
-                            <span>CSS</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Flask</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-server"></i>
-                            <span>REST APIs</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Operating Systems</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-windows"></i>
-                            <span>Windows</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-apple"></i>
-                            <span>MacOS</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-linux"></i>
-                            <span>Linux</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Data Science & ML Libraries</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-table"></i>
-                            <span>Pandas</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-calculator"></i>
-                            <span>NumPy</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Scikit-learn</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>DevOps & Development Tools</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-git-alt"></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-docker"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-cogs"></i>
-                            <span>GitHub Actions</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Design and Modeling Tools</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-chart-bar"></i>
-                            <span>JMP Pro</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-file-excel"></i>
-                            <span>Microsoft Office Suite</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Resume Section -->
-        <section id="resume" class="resume">
-            <div class="section-title">
-                <h2>Resume</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="resume-content" data-aos="fade-up">
-                <div class="resume-text">
-                    <p>Here you can download my full resume to learn more about my experience, education, and skills.</p>
+            <!-- Resume -->
+            <section class="section" id="resume">
+                <header class="section-head">
+                    <span class="section-label">Resume</span>
+                    <span class="section-rule"></span>
+                </header>
+                <div class="resume-body">
+                    <p class="resume-desc">Download my full resume to learn more about my experience, education, and skills.</p>
                     <div class="resume-actions">
-                        <a href="assets/DivijSinghThakurCS-Resume2025.pdf" download class="btn primary-btn download-btn">
-                            <i class="fas fa-download"></i> Download Resume (PDF)
-                        </a>
-                        <a href="assets/DivijSinghThakurCS-Resume2025.pdf" target="_blank" class="btn secondary-btn">
-                            <i class="fas fa-eye"></i> View Resume
-                        </a>
+                        <a href="assets/DivijSinghThakurCS-Resume2025.pdf" download class="resume-btn">Download PDF ↓</a>
+                        <a href="assets/DivijSinghThakurCS-Resume2025.pdf" target="_blank" class="resume-view">View ↗</a>
                     </div>
-                    <div class="resume-preview" data-aos="zoom-in" data-aos-delay="300">
-                        <iframe src="assets/DivijSinghThakurCS-Resume2025.pdf#page=1" class="resume-preview-img" frameborder="0"></iframe>
-                        <div class="resume-preview-overlay">
-                            <i class="fas fa-file-pdf"></i>
-                            <span>Click to download or view</span>
-                        </div>
+                    <div class="resume-preview-wrap">
+                        <iframe src="assets/DivijSinghThakurCS-Resume2025.pdf#page=1" class="resume-iframe" frameborder="0"></iframe>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="section-title">
-                <h2>Contact Me</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>Feel free to reach out to me for collaborations, opportunities, or just to say hello!</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>(623)273-7395</span>
+            <!-- Education -->
+            <section class="section" id="education">
+                <header class="section-head">
+                    <span class="section-label">Education</span>
+                    <span class="section-rule"></span>
+                </header>
+                <ul class="edu-list">
+                    <li class="edu-item">
+                        <h3 class="edu-degree">B.S. Computer Science</h3>
+                        <p class="edu-school">Arizona State University · 2022–2026</p>
+                        <p class="edu-note">Dean's List · NAU Scholar · Outstanding Leadership Award</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Volunteering & Leadership -->
+            <section class="section" id="leadership">
+                <header class="section-head">
+                    <span class="section-label">Leadership</span>
+                    <span class="section-rule"></span>
+                </header>
+                <ul class="leadership-list">
+                    <li class="leadership-item">
+                        <div class="leadership-info">
+                            <span class="leadership-title">Connecting International Communities</span>
+                            <span class="leadership-role">President</span>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>thakurdivijsingh@gmail.com</span>
+                        <p class="leadership-desc">Leading a student organization of 750+ members focused on bridging cultural gaps and fostering international community on campus.</p>
+                    </li>
+                    <li class="leadership-item">
+                        <div class="leadership-info">
+                            <span class="leadership-title">Perplexity</span>
+                            <span class="leadership-role">Campus Partner</span>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Tempe, Arizona</span>
+                        <p class="leadership-desc">Promoting AI-powered research tools and leading community outreach initiatives to drive student adoption.</p>
+                    </li>
+                    <li class="leadership-item">
+                        <div class="leadership-info">
+                            <span class="leadership-title">Adobe</span>
+                            <span class="leadership-role">Student Ambassador</span>
                         </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/in/divij-singh-thakur-75845b1b2" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/Divij10" target="_blank"><i class="fab fa-github"></i></a>
-                    </div>
+                        <p class="leadership-desc">Representing Adobe Creative Cloud through workshops and design initiatives, empowering students with creative tools.</p>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+
+        <!-- Right Panel — expands on hover/click to show contact form -->
+        <aside class="contact-panel" id="contact">
+            <div class="contact-inner">
+
+                <div class="contact-header">
+                    <h2 class="contact-title">Get in<br>touch</h2>
                 </div>
-                <div class="contact-form">
-                    <h3>Send Me a Message</h3>
-                    <form id="contact-form" action="https://formspree.io/f/mgvkqddk" method="POST">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <div class="contact-expand">
+                    <div class="contact-panel-divider"></div>
+                    <form class="contact-form" action="https://formspree.io/f/mgvkqddk" method="POST">
+                        <div class="form-row">
+                            <input type="text" name="name" placeholder="Name" required>
+                            <input type="email" name="email" placeholder="Email" required>
                         </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn primary-btn">Send Message</button>
+                        <input type="text" name="subject" placeholder="Subject" required>
+                        <textarea name="message" placeholder="Message" rows="4" required></textarea>
+                        <button type="submit" class="form-submit">Send Message</button>
                     </form>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">Divij Singh Thakur</div>
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#resume">Resume</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-social">
-                <a href="https://linkedin.com/in/divij-singh-thakur-75845b1b2" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Divij10" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Divij Singh Thakur. All rights reserved.</p>
-        </div>
-    </footer>
+                <div class="contact-footer">
+                    <div class="contact-meta">
+                        <span class="contact-location">Tempe, AZ</span>
+                        <span class="contact-time" id="clock"></span>
+                    </div>
+                    <span class="contact-arrow">↗</span>
+                </div>
 
-    <div class="back-to-top">
-        <i class="fas fa-chevron-up"></i>
+            </div>
+        </aside>
+
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <span class="footer-copy">© Divij Singh Thakur</span>
+        <div class="footer-links">
+            <a href="mailto:thakurdivijsingh@gmail.com">Email</a>
+            <a href="https://linkedin.com/in/divij-singh-thakur-75845b1b2" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Divij10" target="_blank">GitHub</a>
+            <a href="assets/DivijSinghThakurCS-Resume2025.pdf" target="_blank">Resume</a>
+        </div>
+        <span class="footer-location">divijsinghthakur.com</span>
+    </footer>
+
     <script src="script.js"></script>
 </body>
-</html> <!-- Force GitHub Pages rebuild -->
+</html>
