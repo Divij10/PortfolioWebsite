@@ -59,6 +59,19 @@ const observer = new IntersectionObserver(
 
 sections.forEach((section) => observer.observe(section));
 
+// If the page can't scroll far enough to bring the last section into the
+// observer's trigger band, activate it when the user reaches the bottom.
+window.addEventListener('scroll', () => {
+  const atBottom =
+    window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 50;
+  if (atBottom && sections.length) {
+    const lastId = sections[sections.length - 1].id;
+    navLinks.forEach((link) => link.classList.remove('active'));
+    const active = document.querySelector(`.nav-link[href="#${lastId}"]`);
+    if (active) active.classList.add('active');
+  }
+}, { passive: true });
+
 // ── Responsive iframe preview scaling ──
 // Renders at 1280×720 internally, scales to fill the actual column width.
 function scaleIframePreviews() {
